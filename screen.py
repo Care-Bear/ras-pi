@@ -9,8 +9,6 @@ import os
 import sys
 
 
-sys.stdout = sys.stderr = logfile
-
 SCRIPT = os.path.abspath(__file__)
 SCRIPT_DIR = os.path.dirname(SCRIPT)
 JSON_FILE = os.path.join(SCRIPT_DIR, 'screen.json')
