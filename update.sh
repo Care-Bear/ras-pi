@@ -3,9 +3,7 @@
 #debug
 set -x
 
-
 # update git repo
-
 cd ~/repo
 git pull
 
