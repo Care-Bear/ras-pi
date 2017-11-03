@@ -39,10 +39,10 @@ cp example_config.yaml config.yaml
 You can then edit `config.yaml` to include or exclude the webpages or local files you want, as well as changing the sleep time between page changes.
 
 
-You to run the script, ensure `screen.py` and `config.yaml` are in the same directory:
+To then run the script, ensure `screen.py` and `config.yaml` are in the same directory:
 
 ```
 python screen.py
 ```
 
-If you need to make any changes, you just need to amend the yaml file and then restart the script.
+If any changes are to be made, you just need to amend the yaml file and then restart the script.
