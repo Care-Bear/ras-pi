@@ -1,0 +1,10 @@
+links:
+  - http://www.bbc.co.uk/
+  - http://www.devopsweekly.com/
+  - http://thepihut.com/
+
+local:
+  - /path/to/image1
+  - /path/to/image2
+
+sleep_time: 60
