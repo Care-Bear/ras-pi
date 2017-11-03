@@ -30,13 +30,13 @@ Due to the current version of iceweasel being `0.45`, the latest version of geck
 
 ## Usage
 
-In order to run the script you need to copy the `example_config.yaml`:
+In order to run the script, make a copy of `example_config.yaml`:
 
 ```
 cp example_config.yaml config.yaml
 ```
 
-You can then edit `config.yaml` to include or exclude the webpages or local files you want, as well as changing the sleep time between page changes.
+Edit `config.yaml` to include or exclude the webpages or local files you want, as well as changing the sleep time between page changes.
 
 
 To then run the script, ensure `screen.py` and `config.yaml` are in the same directory:
