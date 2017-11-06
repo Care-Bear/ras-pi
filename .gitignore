@@ -1,2 +1,3 @@
 geckodriver*
 config.yaml
+*.log
