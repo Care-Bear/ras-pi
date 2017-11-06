@@ -35,7 +35,7 @@ while True:
                 print page
                 browser.get(page)
                 time.sleep(sleep_time)
-        elif config["local"]:
+        if config["local"]:
             for page in config["local"]:
                 print local + page
                 browser.get(local + page)
