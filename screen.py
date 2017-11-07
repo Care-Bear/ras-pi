@@ -16,6 +16,15 @@ browser = webdriver.Firefox()
 
 sleep_time = config["sleep_time"]
 
+"""
+Open Iceweasel and maximise, if posible it will send the F11 key to go full
+screen.
+
+Reason for maximising and sending the keys is due to an issue with sending keys
+not working with certain versions of Firefox/Selenium/Geckodriver. This
+circumvents the problem of the browser not maximising at all.
+"""
+
 def get_browser():
     browser.get("http://www.seleniumhq.org/")
     browser.maximize_window()
@@ -24,6 +33,14 @@ def get_browser():
     time.sleep(5)
 
 local = "file:///some/local/directory"
+
+"""
+Check if values are present in 'config.yaml' and loop through the given
+images/links.
+
+The auth_links loop checks if required to log in, if not it carries on without
+attempting to enter the credentials again.
+"""
 
 def rotate_pages(browser):
     while True:
@@ -71,9 +88,10 @@ def rotate_pages(browser):
                     time.sleep(sleep_time)
 
             """
-            This is a very un-elegant way to circumvent an issue with the for loops, as they
-            would throw a NoneType is not defined error once it reaches the end of the
-            list.
+            This TypeError exception is a very un-elegant way to circumvent an
+            issue with the for loops. They would throw a NoneType once it reached
+            the end of the list and restart the browser again, rather than moving
+            on to the next section e.g. links, local or auth_links.
             """
 
         except TypeError:
