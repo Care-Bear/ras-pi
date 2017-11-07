@@ -56,7 +56,7 @@ python screen.py
 If any changes are to be made, you just need to amend the yaml file and then restart the script.
 
 
-## Getting Started
+## Quick Setup
 
 If you're looking to deploy and run this script quickly, you can use the `setup.sh` script which will:
 
