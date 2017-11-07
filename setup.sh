@@ -4,7 +4,7 @@ set -eu
 
 # Variables
 GECKODRIVER_VERSION=v0.15.0
-GIT_REPO=git@github.com:HenryCook/ras-pi.git
+GIT_REPO=git@github.com:Care-Bear/ras-pi.git
 REPO_BASE=/opt
 REPO_PATH=$REPO_BASE/ras-pi
 LXDE_PATH=/home/pi/.config/lxsession/LXDE-pi/autostart
