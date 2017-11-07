@@ -62,7 +62,7 @@ If you're looking to deploy and run this script quickly on a **Raspberry Pi**, y
 
 - Install Iceweasel
 - Clone the repo
-- install the Python packages
+- Install the required Python packages
 - Download and move the geckodriver binary to `/usr/local/bin`
 - Create LXDE autostart entry to run the script on start up
 
@@ -70,4 +70,4 @@ If you're looking to deploy and run this script quickly on a **Raspberry Pi**, y
 sudo ./setup.sh
 ```
 
-the only thing you'll need to do it edit `config.yaml` to include whatever you want to display.
+The only thing you'll need to do is edit `config.yaml` to include whatever you want to display.
