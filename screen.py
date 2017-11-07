@@ -18,6 +18,7 @@ sleep_time = config["sleep_time"]
 
 def get_browser():
     browser.get("http://www.seleniumhq.org/")
+    browser.maximize_window()
     browser.find_element_by_tag_name("body").send_keys(Keys.F11)
     browser.find_element_by_id("menu_documentation").click()
     time.sleep(5)
