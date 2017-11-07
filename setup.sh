@@ -19,8 +19,13 @@ if [ ! -f $REPO_PATH ]; then
     echo "The 'ras-pi' repo is not present, cloning now to '$REPO_PATH'"
     cd $REPO_BASE
     git clone $GIT_REPO
-    cp example_config.yaml config.yaml
     pip install -r requirements.txt
+fi
+
+# Copy config.yaml from example_config.yaml if not present
+if [ ! -f $REPO_PATH/config.yaml ]; then
+    echo "'config.yaml' is not present, copying now from 'example_config.yaml'"
+    cp $REPO_PATH/example_config.yaml $REPO_PATH/config.yaml
 fi
 
 # Download geckodriver binary
