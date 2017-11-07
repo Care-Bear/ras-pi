@@ -58,7 +58,7 @@ If any changes are to be made, you just need to amend the yaml file and then res
 
 ## Quick Setup
 
-If you're looking to deploy and run this script quickly, you can use the `setup.sh` script which will:
+If you're looking to deploy and run this script quickly on a **Raspberry Pi**, you can use the `setup.sh` script which will:
 
 - Install Iceweasel
 - Clone the repo
