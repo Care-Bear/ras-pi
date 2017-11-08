@@ -1,11 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#debug
+# Debug
 set -x
 
-# update git repo
-cd ~/repo
+REPO_BASE="/opt"
+REPO_PATH="$REPO_BASE/ras-pi"
+
+SCREEN_PATH="/opt/screen"
+
+# Update git repo
+cd $REPO_PATH
 git pull
 
-cp ~/repo/screen.py ~/screen/screen.py
-cp  ~/repo/screen.json ~/screen/screen.json
+cp $REPO_PATH/screen.py $SCREEN_PATH/screen.py
+cp $REPO_PATH/config.yaml $SCREEN_PATH/config.yaml
+
+exit 0

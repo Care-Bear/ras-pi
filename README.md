@@ -54,3 +54,20 @@ python screen.py
 ```
 
 If any changes are to be made, you just need to amend the yaml file and then restart the script.
+
+
+## Quick Setup
+
+If you're looking to deploy and run this script quickly on a **Raspberry Pi**, you can use the `setup.sh` script which will:
+
+- Install Iceweasel
+- Clone the repo
+- Install the required Python packages
+- Download and move the geckodriver binary to `/usr/local/bin`
+- Create LXDE autostart entry to run the script on start up
+
+```
+sudo ./setup.sh
+```
+
+The only thing you'll need to do is edit `config.yaml` to include whatever you want to display.
