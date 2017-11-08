@@ -3,10 +3,10 @@
 # Debug
 set -x
 
-REPO_BASE=/opt
-REPO_PATH=$REPO_BASE/ras-pi
+REPO_BASE="/opt"
+REPO_PATH="$REPO_BASE/ras-pi"
 
-SCREEN_PATH=/opt/screen
+SCREEN_PATH="/opt/screen"
 
 # Update git repo
 cd $REPO_PATH

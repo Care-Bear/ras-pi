@@ -3,12 +3,12 @@
 set -eu
 
 # Variables
-GECKODRIVER_VERSION=v0.15.0
-GIT_REPO=git@github.com:Care-Bear/ras-pi.git
-REPO_BASE=/opt
-REPO_PATH=$REPO_BASE/ras-pi
-LXDE_PATH=/home/pi/.config/lxsession/LXDE-pi/autostart
-LXDE_ENTRY=@/usr/bin/python /opt/ras-pi/screen.py
+GECKODRIVER_VERSION="v0.15.0"
+GIT_REPO="git@github.com:Care-Bear/ras-pi.git"
+REPO_BASE="/opt"
+REPO_PATH="$REPO_BASE/ras-pi"
+LXDE_PATH="/home/pi/.config/lxsession/LXDE-pi/autostart"
+LXDE_ENTRY="@/usr/bin/python /opt/ras-pi/screen.py"
 
 # Install iceweasel
 apt-get update
