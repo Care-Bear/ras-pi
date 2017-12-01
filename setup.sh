@@ -15,7 +15,7 @@ apt-get update
 apt-get install iceweasel -y
 
 # Clone ras-pi repo and install Python packages
-if [ ! -f $REPO_PATH ]; then
+if [ ! -d $REPO_PATH ]; then
     echo "The 'ras-pi' repo is not present, cloning now to '$REPO_PATH'"
     cd $REPO_BASE
     git clone $GIT_REPO
