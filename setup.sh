@@ -38,6 +38,8 @@ fi
 
 # Create LXDE autostart entry for running script on start up
 if grep -q "$LXDE_ENTRY" $LXDE_PATH; then
+   echo "'$LXDE_ENTRY' already exists in '$LXDE_PATH'"
+else
    echo "$LXDE_ENTRY" >> $LXDE_PATH
 fi
 
