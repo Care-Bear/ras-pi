@@ -15,10 +15,15 @@ apt-get update
 apt-get install iceweasel -y
 
 # Clone ras-pi repo and install Python packages
-if [ ! -f $REPO_PATH ]; then
+if [ ! -d $REPO_PATH ]; then
     echo "The 'ras-pi' repo is not present, cloning now to '$REPO_PATH'"
     cd $REPO_BASE
     git clone $GIT_REPO
+fi
+
+# Installing required python packages
+if [ -f $REPO_PATH/requirements.txt ]
+    echo "Installing python packages"
     pip install -r requirements.txt
 fi
 
@@ -38,7 +43,15 @@ fi
 
 # Create LXDE autostart entry for running script on start up
 if grep -q "$LXDE_ENTRY" $LXDE_PATH; then
+   echo "'$LXDE_ENTRY' already exists in '$LXDE_PATH'"
+else
    echo "$LXDE_ENTRY" >> $LXDE_PATH
+fi
+
+# Changing ownership of the ras-pi directory to the 'pi' user
+if [ ! -w $REPO_PATH/config.yaml ]; then
+    echo "Changing ownership of the '$REPO_PATH' directory to the 'pi' user"
+    chown -R pi:pi $REPO_PATH
 fi
 
 exit 0
