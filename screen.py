@@ -43,6 +43,8 @@ attempting to enter the credentials again.
 """
 
 def rotate_pages(browser):
+    get_browser()
+
     while True:
         try:
             if config["links"]:
@@ -77,11 +79,29 @@ def rotate_pages(browser):
                       password_element_name
                     )
 
+                    """
+                    This is to check if the login_type has been set and if not,
+                    then setting it to 'not_set'. Otherwise it'll throw a
+                    NoneType exception.
+                    """
+
+                    if page.get("login_type") is not None:
+                        login_type = page.get("login_type")
+                    else:
+                        login_type = "not_set"
+
                     try:
                         if browser.find_element_by_xpath(username_xpath):
-                            browser.find_element_by_xpath(username_xpath).send_keys(username)
-                            browser.find_element_by_xpath(password_xpath).send_keys(password)
-                            browser.find_element_by_xpath(password_xpath).send_keys(Keys.ENTER)
+                            if login_type.lower() == "staggered":
+                                browser.find_element_by_xpath(username_xpath).send_keys(username)
+                                browser.find_element_by_xpath(username_xpath).send_keys(Keys.ENTER)
+                                time.sleep(1)
+                                browser.find_element_by_xpath(password_xpath).send_keys(password)
+                                browser.find_element_by_xpath(password_xpath).send_keys(Keys.ENTER)
+                            else:
+                                browser.find_element_by_xpath(username_xpath).send_keys(username)
+                                browser.find_element_by_xpath(password_xpath).send_keys(password)
+                                browser.find_element_by_xpath(password_xpath).send_keys(Keys.ENTER)
                     except Exception:
                         pass
 
@@ -107,5 +127,4 @@ def rotate_pages(browser):
             get_browser()
 
 if __name__ == '__main__':
-    get_browser()
     rotate_pages(browser)
