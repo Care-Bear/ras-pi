@@ -9,7 +9,7 @@ local:
 
 auth_links:
   - url: https://gmail.com
-    staggered_login: True
+    login_type: staggered
     username_element_type: type
     username_element_name: email
     username: <username>
