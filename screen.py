@@ -43,8 +43,6 @@ attempting to enter the credentials again.
 """
 
 def rotate_pages(browser):
-    get_browser()
-
     while True:
         try:
             if config["links"]:
@@ -127,4 +125,5 @@ def rotate_pages(browser):
             get_browser()
 
 if __name__ == '__main__':
+    get_browser()
     rotate_pages(browser)
