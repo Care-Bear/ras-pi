@@ -8,18 +8,19 @@ local:
   - /path/to/image2
 
 auth_links:
-  - url: https://foo.bar.com/
-    username_element_type: name
-    username_element_name: username
+  - url: https://gmail.com
+    login_type: staggered
+    username_element_type: type
+    username_element_name: email
     username: <username>
-    password_element_type: name
+    password_element_type: type
     password_element_name: password
     password: <password>
   - url: https://bar.foo.com
-    username_element_type: id
+    username_element_type: name
     username_element_name: email
     username: <email_address>
-    password_element_type: password
+    password_element_type: name
     password_element_name: password
     password: <password>
 

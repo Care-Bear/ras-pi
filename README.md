@@ -44,6 +44,8 @@ While it's a little fiddly as most login forms wildy differ, you can use this sc
 
 To use the `auth_links` feature, you will need to inspect the login form using your web browser (right click and choose inspect), and find the type and name of the element for both the username and password field. Once you have found these, put them the copied `config.yaml`. See the `example_config.yaml` for an example of how to do this.
 
+There is also a `login_type` option to allow for you to cycle through webpages that have staggered login pages, such as Google Apps. this can be achieved by dding the key of `login_type` and the value of `staggered` in `config.yaml`.
+
 
 ## Usage
 

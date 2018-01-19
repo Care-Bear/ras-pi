@@ -22,7 +22,7 @@ if [ ! -d $REPO_PATH ]; then
 fi
 
 # Installing required python packages
-if [ -f $REPO_PATH/requirements.txt ]
+if [ -f $REPO_PATH/requirements.txt ]; then
     echo "Installing python packages"
     pip install -r requirements.txt
 fi
