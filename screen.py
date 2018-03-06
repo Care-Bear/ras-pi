@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -6,10 +6,16 @@ from selenium.common.exceptions import NoSuchWindowException
 import time
 import yaml
 import os
+import logging
 
 SCRIPT = os.path.abspath(__file__)
 SCRIPT_DIR = os.path.dirname(SCRIPT)
 FILE = os.path.join(SCRIPT_DIR, 'config.yaml')
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 config = yaml.safe_load(open(FILE))
 browser = webdriver.Firefox()
@@ -47,18 +53,18 @@ def rotate_pages(browser):
         try:
             if config["links"]:
                 for page in config["links"]:
-                    print page
+                    logging.info('%s', page)
                     browser.get(page)
                     time.sleep(sleep_time)
             if config["local"]:
                 for page in config["local"]:
-                    print local + page
+                    logging.info('%s %s', local, page)
                     browser.get(local + page)
                     time.sleep(sleep_time)
             if config["auth_links"]:
                 for page in config["auth_links"]:
                     url = page["url"]
-                    print url
+                    logging.info('%s', url)
                     browser.get(url)
 
                     username_element_type = page.get("username_element_type")
@@ -116,7 +122,7 @@ def rotate_pages(browser):
             pass
 
         except BaseException as err:
-            print err
+            logging.info('%s', err)
             try:
                 browser.close()
             except NoSuchWindowException:
