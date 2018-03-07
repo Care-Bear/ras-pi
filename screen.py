@@ -31,6 +31,7 @@ not working with certain versions of Firefox/Selenium/Geckodriver. This
 circumvents the problem of the browser not maximising at all.
 """
 
+
 def get_browser():
     browser.get("http://www.seleniumhq.org/")
     browser.maximize_window()
@@ -47,6 +48,7 @@ images/links.
 The auth_links loop checks if required to log in, if not it carries on without
 attempting to enter the credentials again.
 """
+
 
 def rotate_pages(browser):
     while True:
@@ -97,26 +99,33 @@ def rotate_pages(browser):
                     try:
                         if browser.find_element_by_xpath(username_xpath):
                             if login_type.lower() == "staggered":
-                                browser.find_element_by_xpath(username_xpath).send_keys(username)
-                                browser.find_element_by_xpath(username_xpath).send_keys(Keys.ENTER)
+                                browser.find_element_by_xpath(
+                                    username_xpath).send_keys(username)
+                                browser.find_element_by_xpath(
+                                    username_xpath).send_keys(Keys.ENTER)
                                 time.sleep(1)
-                                browser.find_element_by_xpath(password_xpath).send_keys(password)
-                                browser.find_element_by_xpath(password_xpath).send_keys(Keys.ENTER)
+                                browser.find_element_by_xpath(
+                                    password_xpath).send_keys(password)
+                                browser.find_element_by_xpath(
+                                    password_xpath).send_keys(Keys.ENTER)
                             else:
-                                browser.find_element_by_xpath(username_xpath).send_keys(username)
-                                browser.find_element_by_xpath(password_xpath).send_keys(password)
-                                browser.find_element_by_xpath(password_xpath).send_keys(Keys.ENTER)
+                                browser.find_element_by_xpath(
+                                    username_xpath).send_keys(username)
+                                browser.find_element_by_xpath(
+                                    password_xpath).send_keys(password)
+                                browser.find_element_by_xpath(
+                                    password_xpath).send_keys(Keys.ENTER)
                     except Exception:
                         pass
 
                     time.sleep(sleep_time)
 
-            """
-            This TypeError exception is a very un-elegant way to circumvent an
-            issue with the for loops. They would throw a NoneType once it reached
-            the end of the list and restart the browser again, rather than moving
-            on to the next section e.g. links, local or auth_links.
-            """
+        """
+        This TypeError exception is a very un-elegant way to circumvent an
+        issue with the for loops. They would throw a NoneType once it reached
+        the end of the list and restart the browser again, rather than moving
+        on to the next section e.g. links, local or auth_links.
+        """
 
         except TypeError:
             pass
